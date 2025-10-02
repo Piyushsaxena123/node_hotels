@@ -17,10 +17,12 @@
 const express = require('express')
 const app = express();
 const db = require('./db');
- const PORT = 3000;
+
+ require('dotenv').config(); // Load environment variables from .env file
 
  const bodyParser = require('body-parser');
  app.use(bodyParser.json()); // req.body
+const PORT = process.env.PORT || 3000;
 
 
 const MenuItems = require('./models/MenuItems');
@@ -41,7 +43,7 @@ app.use('/MenuItems',menuRoutes); // localhost:3000/api/menu
 
 
 app.listen(PORT,()=>{
-    // console.log('listening on port 3000');
-       console.log(`✅ Server running at http://localhost:${PORT}`)
-})
+    console.log('listening on port 3000');
+    //    console.log(`✅ Server running at http://localhost:${PORT}`)
+}) 
 
