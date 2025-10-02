@@ -99,4 +99,5 @@ Implement middleware (authentication, validation, logging).
 
 Deploy your Node.js app to Render(https://hotels-owtk.onrender.com/), Vercel, or Heroku.
 Deploy your MongoDb app to Mongodb Atlas(https://www.mongodb.com/products/platform/atlas-database?msockid=15c236e6bf7d6d440959254ebe0e6c83)
+or (https://cloud.mongodb.com/v2/68336e5ebce7aa63bafa93b0#/metrics/replicaSet/68dd4780f6f7db011d6fc0ef/explorer/hotels/menuitems/find)
 
