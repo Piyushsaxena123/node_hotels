@@ -98,3 +98,5 @@ Learn about CRUD operations in MongoDB.
 Implement middleware (authentication, validation, logging).
 
 Deploy your Node.js app to Render(https://hotels-owtk.onrender.com/), Vercel, or Heroku.
+Deploy your MongoDb app to Mongodb Atlas(https://www.mongodb.com/products/platform/atlas-database?msockid=15c236e6bf7d6d440959254ebe0e6c83)
+
