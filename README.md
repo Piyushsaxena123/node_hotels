@@ -1,64 +1,77 @@
-Node Hotel Application
-The Node Hotel application is a Node.js-based system developed using the Express.js framework, with MongoDB as the chosen database. This application manages information related to persons (staff) and menu items. It exposes specific endpoints to handle CRUD (Create, Read, Update, Delete) operations for both persons and menu items.
+# 🏨 **Node Hotel Application**
 
-Endpoints
-Persons
-Add a Person:
+The **Node Hotel Application** is a **Node.js-based system** built with the **Express.js framework** and **MongoDB (via Mongoose)**.
+It manages **staff (persons)** and **menu items**, providing **CRUD (Create, Read, Update, Delete)** operations for both.
 
-Endpoint: POST /person
-Description: Adds a person to the system with details such as name, role, etc.
-Get All Persons:
+---
 
-Endpoint: GET /person
-Description: Retrieves a list of all persons in the system.
-Get Persons by Work Type:
+## 📌 **Features**
 
-Endpoint: GET /person/:workType
-Description: Retrieves a list of persons based on their work type (e.g., chef, waiter, manager).
-Update a Person:
+* 👨‍🍳 Manage staff (add, update, delete, filter by role).
+* 🍽️ Manage menu items (add, update, delete, filter by taste).
+* ⚡ RESTful API endpoints.
+* 🛠️ Modular structure with routes & models.
+* 💾 MongoDB integration via Mongoose.
 
-Endpoint: PUT /person/:id
-Description: Updates the details of a specific person identified by their ID.
-Delete a Person:
+---
 
-Endpoint: DELETE /person/:id
-Description: Deletes a person from the system based on their ID.
-Menu Items
-Add a Menu Item:
+## 🔗 **API Endpoints**
 
-Endpoint: POST /menu
-Description: Adds a menu item to the system with details such as name, price, taste, etc.
-Get All Menu Items:
+### 👤 <u>Persons</u>
 
-Endpoint: GET /menu
-Description: Retrieves a list of all menu items in the system.
-Get Menu Items by Taste:
+* **Add a Person**
+  `POST /person` → *Add staff details (name, role, etc.)*
 
-Endpoint: GET /menu/:taste
-Description: Retrieves a list of menu items based on their taste (e.g., sweet, spicy, sour).
-Update a Menu Item:
+* **Get All Persons**
+  `GET /person` → *Retrieve all staff members*
 
-Endpoint: PUT /menu/:id
-Description: Updates the details of a specific menu item identified by its ID.
-Delete a Menu Item:
+* **Get Persons by Work Type**
+  `GET /person/:workType` → *Filter staff by role (e.g., chef, waiter, manager)*
 
-Endpoint: DELETE /menu/:id
-Description: Deletes a menu item from the system based on its ID.
-Data Models
-Person
-The Person data model represents information about staff members in the hotel.
+* **Update a Person**
+  `PUT /person/:id` → *Update person details by ID*
 
-Fields:
+* **Delete a Person**
+  `DELETE /person/:id` → *Remove a person by ID*
 
-name: String (Person's name)
-age: Number (Person's age)
-work: Enum (Role in the hotel, such as chef, waiter, manager)
-mobile: String (Person's mobile number)
-email: String (Person's email address, unique)
-address: String (Person's address)
-salary: Number (Person's salary)
-Example:
+---
 
+### 🍴 <u>Menu Items</u>
+
+* **Add a Menu Item**
+  `POST /menu` → *Add dish details (name, price, taste, etc.)*
+
+* **Get All Menu Items**
+  `GET /menu` → *Retrieve all menu items*
+
+* **Get Menu Items by Taste**
+  `GET /menu/:taste` → *Filter menu by taste (sweet, spicy, sour)*
+
+* **Update a Menu Item**
+  `PUT /menu/:id` → *Update menu item details by ID*
+
+* **Delete a Menu Item**
+  `DELETE /menu/:id` → *Remove menu item by ID*
+
+---
+
+## 🗂️ **Data Models**
+
+### 👤 *Person Model*
+
+| Field     | Type   | Description                  |
+| --------- | ------ | ---------------------------- |
+| `name`    | String | Person's name                |
+| `age`     | Number | Person's age                 |
+| `work`    | Enum   | Role (chef, waiter, manager) |
+| `mobile`  | String | Contact number               |
+| `email`   | String | Unique email                 |
+| `address` | String | Residential address          |
+| `salary`  | Number | Monthly salary               |
+
+**Example**:
+
+```json
 {
   "name": "John Doe",
   "age": 30,
@@ -68,20 +81,24 @@ Example:
   "address": "123 Main Street",
   "salary": 30000
 }
+```
 
-Menu Item
-The MenuItem data model represents information about menu items available in the hotel.
+---
 
-Fields:
+### 🍴 *Menu Item Model*
 
-name: String (Item's name)
-price: Number (Item's price)
-taste: Enum (Item's taste, such as sweet, spicy, sour)
-is_drink: Boolean (Indicates if the item is a drink, default is false)
-ingredients: Array of Strings (List of ingredients, default is an empty array)
-num_sales: Number (Number of sales for the item, default is 0)
-Example:
+| Field         | Type    | Description                           |
+| ------------- | ------- | ------------------------------------- |
+| `name`        | String  | Item name                             |
+| `price`       | Number  | Item price                            |
+| `taste`       | Enum    | Taste (sweet, spicy, sour)            |
+| `is_drink`    | Boolean | Whether it’s a drink (default: false) |
+| `ingredients` | Array   | List of ingredients                   |
+| `num_sales`   | Number  | Sales count (default: 0)              |
 
+**Example**:
+
+```json
 {
   "name": "Spicy Chicken Curry",
   "price": 12.99,
@@ -90,108 +107,120 @@ Example:
   "ingredients": ["chicken", "spices", "vegetables"],
   "num_sales": 50
 }
+```
 
-Usage
-Install Dependencies:
-npm install
-<----------🟢 Node.js + Express + MongoDB Backend Setup---------->
-📌 Overview
+---
 
-This project is a simple backend setup using Node.js, Express.js, and MongoDB (via Mongoose).
-It demonstrates:
+## ⚙️ **Installation**
 
-Setting up an Express server
+1. **Clone the Repository**
 
-Connecting MongoDB to Node.js using Mongoose
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo
+   ```
 
-Organizing routes and models for scalability
+2. **Install Dependencies**
 
-⚙️ Installation
+   ```bash
+   npm install
+   ```
 
-Clone the repository
+3. **Install Nodemon (for auto-restart)**
 
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+   ```bash
+   npm install -g nodemon
+   ```
 
+---
 
-Install dependencies
+## 📂 **Project Structure**
 
-npm install
-
-
-Install nodemon (for auto-restart)
-
-npm install -g nodemon
-
-📂 Project Structure
+```
 .
-├── models/             # Database models (Mongoose schemas)
+├── models/             # Database models
 │   └── MenuItems.js
 ├── routes/             # Express routes
 │   ├── personRoutes.js
 │   └── menuItemsRoutes.js
 ├── db.js               # MongoDB connection setup
-├── server.js           # Main entry point
-├── .env                # Environment variables (MongoDB URI, PORT)
+├── server.js           # Entry point
+├── .env                # Environment variables
 ├── package.json
 └── README.md
+```
 
-🔑 Environment Variables
+---
 
-Create a .env file in the root folder:
+## 🔑 **Environment Variables**
 
+Create a `.env` file in the project root:
+
+```
 PORT=3000
 MONGO_URL=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>
+```
 
+⚠️ *Replace `<username>`, `<password>`, `<dbname>` with your MongoDB Atlas credentials.*
 
-⚠️ Replace <username>, <password>, and <dbname> with your actual MongoDB Atlas credentials.
+---
 
-🚀 Running the Project
+## 🚀 **Running the Project**
 
-Start the server with:
+Start the development server:
 
+```bash
 nodemon server.js
+```
 
+Expected output:
 
-You should see:
-
+```
 ✅ Connected to MongoDB server
 ✅ Server running at http://localhost:3000
+```
 
-🛠️ API Endpoints
-Root
-GET /
+---
 
+## 🛠️ **API Summary**
 
-➡️ Returns a welcome message.
+### Root
 
-Person Routes
-GET    /person
-POST   /person
-PUT    /person/:id
-DELETE /person/:id
+* `GET /` → Welcome message
 
-Menu Items Routes
-GET    /MenuItems
-POST   /MenuItems
-PUT    /MenuItems/:id
-DELETE /MenuItems/:id
+### Person Routes
 
-📚 Learning Notes
+* `GET /person`
+* `POST /person`
+* `PUT /person/:id`
+* `DELETE /person/:id`
 
-Express.js is used to handle HTTP requests and create REST APIs.
+### Menu Routes
 
-Mongoose is used to connect Node.js with MongoDB and define schemas.
+* `GET /menu`
+* `POST /menu`
+* `PUT /menu/:id`
+* `DELETE /menu/:id`
 
-.env keeps your MongoDB credentials safe instead of hardcoding them in code.
+---
 
-Nodemon auto-restarts the server when code changes.
+## 📚 **Learning Notes**
 
-✅ Next Steps
+* **Express.js** → Handles HTTP requests & APIs.
+* **Mongoose** → Defines MongoDB schemas & models.
+* **.env** → Keeps credentials safe.
+* **Nodemon** → Auto-restarts on code changes.
 
-Learn about CRUD operations in MongoDB.
+---
 
-Implement middleware (authentication, validation, logging).
+## ✅ **Next Steps**
+
+* 🔍 Learn deeper CRUD in MongoDB.
+* 🔐 Add middleware (authentication, validation).
+* 🌍 Deploy on **Render**, **Vercel**, or **Heroku**.
+
+👉 Demo Deployment: [Node Hotel App on Render](https://hotels-owtk.onrender.com/)
+
 
 Deploy your Node.js app to Render(https://hotels-owtk.onrender.com/), Vercel, or Heroku.
 Deploy your MongoDb app to Mongodb Atlas(https://www.mongodb.com/products/platform/atlas-database?msockid=15c236e6bf7d6d440959254ebe0e6c83)
